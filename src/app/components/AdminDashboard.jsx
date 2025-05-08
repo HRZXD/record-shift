@@ -1,6 +1,5 @@
-'use client'
+'use client';
 import React from "react";
-import html2pdf from "html2pdf.js";
 
 export default function AdminDashboard({
   bookings,
@@ -10,7 +9,8 @@ export default function AdminDashboard({
 }) {
   const pdfId = "pdf-to-download";
 
-  const downloadPDF = () => {
+  const downloadPDF = async () => {
+    const html2pdf = (await import('html2pdf.js')).default;
     const element = document.getElementById(pdfId);
     const opt = {
       margin: 0.5,
@@ -30,12 +30,47 @@ export default function AdminDashboard({
 
   const renderNames = (door) =>
     bookings[door]?.length > 0
-      ? bookings[door].map((name, idx) => <div key={`${door}-${idx}`} className="name-bookings">{name}</div>)
+      ? bookings[door].map((name, idx) => (
+          <div key={`${door}-${idx}`} className="name-bookings">{name}</div>
+        ))
       : <div className="name-bookings">Not found</div>;
+
+  const getDoorLabel = (door) => {
+    const labels = {
+      door1m: "อาคาร 1 ตอนเช้า",
+      door1a: "อาคาร 1 ตอนบ่าย",
+      door2m: "อาคาร 2 ตอนเช้า",
+      door2a: "อาคาร 2 ตอนบ่าย",
+      bc: "โรงอาหาร",
+      b13: "อาคาร 1 ชั้น 3",
+      b14: "อาคาร 1 ชั้น 4",
+      b15: "อาคาร 1 ชั้น 5",
+      b16: "อาคาร 1 ชั้น 6",
+      b17: "อาคาร 1 ชั้น 7",
+      b18: "อาคาร 1 ชั้น 8",
+      b1u: "อาคาร 1 ชั้นล่างและหลังอาคาร 1",
+      b2u: "อาคาร 2 ชั้นล่างและหลังอาคาร 2",
+      b22: "อาคาร 2 ชั้น 2",
+      b23: "อาคาร 2 ชั้น 3",
+      b24: "อาคาร 2 ชั้น 4",
+      b25: "อาคาร 2 ชั้น 5",
+      b32: "อาคาร 3 ชั้น 2",
+      b33: "อาคาร 3 ชั้น 3",
+      b41: "อาคาร 4 ชั้น 1",
+      b42: "อาคาร 4 ชั้น 2",
+      b43: "อาคาร 4 ชั้น 3",
+      fd: "สนามฟุตบอล สนามฟุตซอล สนามบาสเกตบอล และบริเวณพระประจำโรงเรียน",
+      bsp2: "อาคารอเนกประสงค์ ชั้น 2",
+      bsp3: "อาคารอเนกประสงค์ ชั้น 3",
+      b63: "อาคาร 6 และหลังอาคาร 3",
+    };
+    return labels[door] || door;
+  };
 
   return (
     <>
       <button onClick={downloadPDF} className="btn-candsave">Save to PDF</button>
+
       <div className="day-section">
         <div className="text-day">จองเวรวัน</div>
         <select value={selectedDay} onChange={setSelectedDay} className="day-booking">
@@ -46,6 +81,7 @@ export default function AdminDashboard({
           <option value="fri">วันศุกร์</option>
         </select>
       </div>
+
       <div id={pdfId}>
         <h2>ตารางเวรวัน {convertDayName}</h2>
         <table className="product-table">
@@ -58,66 +94,7 @@ export default function AdminDashboard({
           <tbody>
             {doors.map((door) => (
               <tr key={door}>
-                <td>
-                    {(() => {
-                        switch (door) {
-                        case "door1m":
-                            return "อาคาร 1 ตอนเช้า";
-                        case "door1a":
-                            return "อาคาร 1 ตอนบ่าย";
-                        case "door2m":
-                            return "อาคาร 2 ตอนเช้า";
-                        case "door2a":
-                            return "อาคาร 2 ตอนบ่าย";
-                        case "bc":
-                            return "โรงอาหาร";
-                        case "b13":
-                            return "อาคาร 1 ชั้น 3";
-                        case "b14":
-                            return "อาคาร 1 ชั้น 4";
-                        case "b15":
-                            return "อาคาร 1 ชั้น 5";
-                        case "b16":
-                            return "อาคาร 1 ชั้น 6";
-                        case "b17":
-                            return "อาคาร 1 ชั้น 7";
-                        case "b18":
-                            return "อาคาร 1 ชั้น 8";
-                        case "b1u":
-                            return "อาคาร 1 ชั้นล่างและหลังอาคาร 1";
-                        case "b2u":
-                            return "อาคาร 2 ชั้นล่างและหลังอาคาร 2";
-                        case "b22":
-                            return "อาคาร 2 ชั้น 2";
-                        case "b23":
-                            return "อาคาร 2 ชั้น 3";
-                        case "b24":
-                            return "อาคาร 2 ชั้น 4";
-                        case "b25":
-                            return "อาคาร 2 ชั้น 5";
-                        case "b32":
-                            return "อาคาร 3 ชั้น 2";
-                        case "b33":
-                            return "อาคาร 3 ชั้น 3";
-                        case "b41":
-                            return "อาคาร 4 ชั้น 1";
-                        case "b42":
-                            return "อาคาร 4 ชั้น 2";
-                        case "b43":
-                            return "อาคาร 4 ชั้น 3";
-                        case "fd":
-                            return "สนามฟุตบอล สนามฟุตซอล สนามบาสเกตบอล และบริเวณพระประจำโรงเรียน";
-                        case "bsp2":
-                            return "อาคารอเนกประสงค์ ชั้น 2";
-                        case "bsp3":
-                            return "อาคารอเนกประสงค์ ชั้น 3";
-                        case "b63":
-                            return "อาคาร 6 และหลังอาคาร 3";
-                        default:
-                            return door; // If no match, return the door value itself
-                        }
-                    })()}
-                </td>
+                <td>{getDoorLabel(door)}</td>
                 <td>{renderNames(door)}</td>
               </tr>
             ))}
