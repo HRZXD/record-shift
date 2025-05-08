@@ -1,0 +1,205 @@
+.door-section{
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.name-bookings{
+    padding-top: 10px;
+}
+.pdf-section {
+  display: block !important;
+}
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px; /* Increase font size */
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+.product-table th{
+  min-width: 150px; /* Set minimum width for columns */
+}
+.product-table th,
+.product-table td {
+  border: 1px solid #ddd;
+  padding: 12px 40px; /* Increase padding for more space */
+  text-align: left;
+}
+
+.product-table th.header-cell {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  min-width: 350px; /* Set minimum width for columns */
+}
+
+.cell-content {
+  vertical-align: top;
+}
+
+.name-bookings {
+  font-size: 16px; /* Increase font size for names */
+  margin-bottom: 8px; /* Increase space between names */
+}
+
+.box-con{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 802px;
+}
+
+.login-ad{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 550px;
+  max-width: 100%;
+  height: 401px;
+  border: 1px #DADCE0 solid;
+  border-radius: 20px;
+}
+.day-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.text-day {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 12px;
+}
+.day-booking {
+  height: 40px;
+  width: 198px;
+  border-radius: 10px;
+  border: solid 1px black;
+  font-size: 16px;
+  padding-left: 14px;
+}
+.log-ad-hid{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 425px;
+  height: 300px;
+}
+
+.log-ad-hid form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 208px;
+}
+
+.user-ad ,.pw-ad{
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+}
+
+.user-ad input ,.pw-ad input{
+  width: 310px;
+  max-width: 100%;
+  height: 35px;
+  border: 1px solid #DADCE0;
+  border-radius: 12px;
+  padding-left: 10px;
+  transition-duration: 0.4s;
+}
+
+input:focus{
+  outline: none;
+  border: 2px solid #000;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.24), 0 3px 5px 0 rgba(0,0,0,0.19);
+
+}
+
+.user-ad label ,.pw-ad label{
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.login-ad button{
+  width: 350px;
+  height: 35px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid #DADCE0;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+}
+
+.login-ad button:hover{
+  background-color: #000; /* Green */
+  color: white;
+}
+
+.btn-ad-log ,.btn-ad-back{
+  display: flex;
+  justify-content: center;
+}
+.btn-candsave{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 40px;
+  background-color: white;
+  border: solid 1px #DADCE0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-left: 20px;
+
+}
+.btn-candsave:hover {
+  background-color: #000; /* Green */
+  color: white;
+}
+@media screen and (max-width: 600px){
+
+  .login-ad{
+      border: none;
+  }
+
+}
+
+@media screen and (max-width: 450px){
+
+  .log-ad-hid{
+    height: 400px;
+    width: 350px;
+    max-width: 90%;
+    max-height: 100%;
+  }
+
+  .log-ad-hid form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 308px;
+  }
+  .user-ad ,.pw-ad{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 75px;
+  }
+
+  .user-ad input ,.pw-ad input{
+    width: 100%;
+    height: 35px;
+
+
+  }
+}

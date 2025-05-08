@@ -1,0 +1,56 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.container-card-credit{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 2em;
+    animation: fadeIn 0.4s ease forwards; 
+}
+.credit-img{
+    width: 425px;
+    height: 550px;
+    /* filter: grayscale(0%); */
+    filter: brightness(90%)
+}
+.credit-img:hover{
+    scale: 1.1;
+    filter: grayscale(0%);
+}
+.fw-btn-credit{
+    font-size: 18px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background-color: transparent;
+    padding: 8px 30px;
+    cursor: pointer;
+    margin: 2em 0 1em 6em;
+    transition-duration: 0.4s;
+}
+.fw-btn-credit:hover{
+    background-color: black;
+    color: white;
+}
+@media screen and (max-width: 600px){
+    .credit-img{
+        width: 344px;
+        height: 448px;
+    }
+    .fw-btn-credit{
+        font-size: 14px !important;
+        border: 1px solid #000;
+        border-radius: 10px;
+        background-color: transparent;
+        padding: 11px 35.8px;
+        cursor: pointer;
+        margin: 2em 0 1em 6em;
+    }
+}

@@ -1,0 +1,154 @@
+*{
+    opacity: 1;
+  }
+  .card-record {
+    margin: 12px;
+    width: 304px;
+    height: 188px;
+    border-radius: 12px;
+    border: solid 1px black;
+    padding: 12px 0 0 24px;
+  }
+  .fd-class-sp{
+    margin: 12px;
+    width: 304px;
+    height: 260px;
+    border-radius: 12px;
+    border: solid 1px black;
+    padding: 12px 0 0 24px;
+  }
+  .door-num {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .num-person {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .time-table {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 24px 0 24px 0;
+  }
+  .btn-booking {
+    border: solid 1px #3c3c43;
+    border-radius: 100px;
+    height: 42px;
+    width: 252px;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 14px;
+    transition-duration: 0.4s;
+  }
+  .btn-booking:hover {
+    background-color: #000; /* Green */
+    color: white;
+  }
+  .day-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .text-day {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 12px;
+  }
+  .day-booking {
+    height: 40px;
+    width: 198px;
+    border-radius: 10px;
+    border: solid 1px black;
+    font-size: 16px;
+    padding-left: 14px;
+  }
+  .booking-door {
+    margin-left: 10em;
+    margin-top: 2em;
+  }
+  .booking-building {
+    margin-left: 10em;
+    margin-top: 2em;
+  }
+  .text-header-door {
+    font-size: 20px;
+  }
+  .text-header-building {
+    font-size: 20px;
+  }
+  .card-door {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+  .card-building {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+  .card-record {
+    margin-right: 4em;
+  }
+  .btn-cancel {
+    border: solid 1px #e20926;
+    border-radius: 100px;
+    height: 42px;
+    width: 252px;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 14px;
+    color: #e20926;
+  }
+  .booking-limit-message {
+    color: red;
+    font-size: 18px;
+  }
+  
+  .fade-in-down {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .fade-in-down.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @media screen and (max-width: 600px) {
+    .booking-door {
+      margin-left: 2em;
+      margin-top: 2em;
+    }
+    .booking-building {
+      margin-left: 2em;
+      margin-top: 2em;
+    }
+  }
+  @media screen and (max-width: 410px) {
+    .btn-cancel {
+      border: solid 1px #e20926;
+      border-radius: 100px;
+      height: 42px;
+      width: 230px;
+      margin-right: 20px;
+      cursor: pointer;
+      background-color: transparent;
+      font-size: 14px;
+      color: #e20926;
+    }
+    .btn-booking {
+      border: solid 1px #3c3c43;
+      border-radius: 100px;
+      height: 42px;
+      width: 230px;
+      margin-right: 20px;
+      cursor: pointer;
+      background-color: transparent;
+      font-size: 14px;
+    }
+  }

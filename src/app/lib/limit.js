@@ -1,0 +1,31 @@
+// /lib/limits.js
+
+export const limits = {
+    door1m: 5,
+    door1a: 5,
+    door2m: 5,
+    door2a: 5,
+    bc: 2,
+    b13: 1,
+    b14: 1,
+    b15: 1,
+    b16: 1,
+    b17: 1,
+    b18: 1,
+    b1u: 1,
+    b2u: 1,
+    b22: 1,
+    b23: 1,
+    b24: 1,
+    b25: 1,
+    b32: 1,
+    b33: 1,
+    b41: 1,
+    b42: 1,
+    b43: 1,
+    fd: 1,
+    bsp2: 1,
+    bsp3: 1,
+    b63: 1,
+  };
+  
